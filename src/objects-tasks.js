@@ -18,10 +18,9 @@
  *    shallowCopy({}) => {}
  */
 function shallowCopy(obj) {
-  const copy = Object.assign({}, obj);
-  return copy;
+  const assign = { ...obj };
+  return assign;
 }
-
 /**
  * Merges array of objects into a single object. If there are overlapping keys, the values
  * should be summed.
@@ -63,7 +62,7 @@ function mergeObjects(objects) {
  *
  */
 function removeProperties(obj, keys) {
-  const copy = Object.assign({}, obj);
+  const copy = { ...obj };
 
   keys.forEach((item) => {
     delete copy[item];
